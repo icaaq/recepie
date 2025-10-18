@@ -5,7 +5,7 @@ prep_time: 10 min
 cook_time: 25 min
 servings: 4
 difficulty: Lätt
-tags: [kyckling, middag, curry, snabbt]
+tags: [middag, kyckling, asiatiskt, snabbt, gryta]
 rating: 4
 comment: Väldigt god och snabb vardagsmat. Nästa gång lägger jag till lite mer curry för starkare smak.
 ingredients:

@@ -3,7 +3,7 @@ title: Gratinerade burritos
 description: En krämig och smakrik rätt med köttfärs, paprika och svarta bönor inlindade i tortillabröd och gratinerade med ost. Perfekt vardagsmiddag med mexikanska smaker!
 servings: ca 4 portioner
 difficulty: Lätt
-tags: [middag, mexikanskt, gratäng]
+tags: [middag, nötfärs, mexikanskt, gratäng]
 source: Eget recept
 rating: 3
 ingredients:

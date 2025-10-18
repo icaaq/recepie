@@ -1,31 +1,31 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const checkboxes = document.querySelectorAll('.recipe-checkbox');
-  const toggleBtn = document.getElementById('shopping-list-toggle');
-  const panel = document.getElementById('shopping-list-panel');
-  const closeBtn = document.getElementById('close-shopping-list');
-  const clearBtn = document.getElementById('clear-shopping-list');
-  const printBtn = document.getElementById('print-shopping-list');
-  const aiSummarizeBtn = document.getElementById('ai-summarize');
-  const countSpan = document.getElementById('shopping-count');
-  const selectedRecipesDiv = document.getElementById('selected-recipes');
-  const ingredientsListDiv = document.getElementById('ingredients-list');
-  const emptyMessage = document.getElementById('empty-message');
-  const aiSummaryDiv = document.getElementById('ai-summary');
-  const aiSummaryContent = document.getElementById('ai-summary-content');
+document.addEventListener("DOMContentLoaded", function () {
+  const checkboxes = document.querySelectorAll(".recipe-checkbox");
+  const toggleBtn = document.getElementById("shopping-list-toggle");
+  const panel = document.getElementById("shopping-list-panel");
+  const closeBtn = document.getElementById("close-shopping-list");
+  const clearBtn = document.getElementById("clear-shopping-list");
+  const printBtn = document.getElementById("print-shopping-list");
+  const aiSummarizeBtn = document.getElementById("ai-summarize");
+  const countSpan = document.getElementById("shopping-count");
+  const selectedRecipesDiv = document.getElementById("selected-recipes");
+  const ingredientsListDiv = document.getElementById("ingredients-list");
+  const emptyMessage = document.getElementById("empty-message");
+  const aiSummaryDiv = document.getElementById("ai-summary");
+  const aiSummaryContent = document.getElementById("ai-summary-content");
 
   let selectedRecipes = new Map();
   let currentCombinedIngredients = [];
 
   // Get ingredients from data attribute
   function getIngredients(card) {
-    const ingredientsData = card.getAttribute('data-ingredients');
-    if (!ingredientsData || ingredientsData === 'null') {
+    const ingredientsData = card.getAttribute("data-ingredients");
+    if (!ingredientsData || ingredientsData === "null") {
       return [];
     }
     try {
       return JSON.parse(ingredientsData);
     } catch (e) {
-      console.error('Error parsing ingredients:', e);
+      console.error("Error parsing ingredients:", e);
       return [];
     }
   }
@@ -34,23 +34,28 @@ document.addEventListener('DOMContentLoaded', function() {
   function parseIngredient(ingredient) {
     // Match patterns like "500 g nötfärs" or "2 msk olja" or "1 lök"
     // Units must be followed by space or end of string to avoid matching "g" in "gul"
-    const match = ingredient.match(/^([\d,./½¼¾-]+)\s+(g|kg|ml|dl|cl|l|msk|tsk|st|krm|förpackning|burk|påse)\s+(.+)$/i);
+    const match = ingredient.match(
+      /^([\d,./½¼¾-]+)\s+(g|kg|ml|dl|cl|l|msk|tsk|st|krm|förpackning|burk|påse)\s+(.+)$/i
+    );
 
     if (match) {
       let amount = match[1];
       // Convert fractions
-      amount = amount.replace('½', '0.5').replace('¼', '0.25').replace('¾', '0.75');
+      amount = amount
+        .replace("½", "0.5")
+        .replace("¼", "0.25")
+        .replace("¾", "0.75");
       // Handle ranges like "2-3" - take the middle value
-      if (amount.includes('-')) {
-        const parts = amount.split('-').map(s => s.trim());
+      if (amount.includes("-")) {
+        const parts = amount.split("-").map((s) => s.trim());
         const [min, max] = parts.map(parseFloat);
         amount = ((min + max) / 2).toString();
       }
 
       return {
-        amount: parseFloat(amount.replace(',', '.')),
+        amount: parseFloat(amount.replace(",", ".")),
         unit: match[2].toLowerCase(),
-        name: match[3].trim().toLowerCase()
+        name: match[3].trim().toLowerCase(),
       };
     }
 
@@ -58,12 +63,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const simpleMatch = ingredient.match(/^([\d,./½¼¾]+)\s+(.+)$/);
     if (simpleMatch) {
       let amount = simpleMatch[1];
-      amount = amount.replace('½', '0.5').replace('¼', '0.25').replace('¾', '0.75');
+      amount = amount
+        .replace("½", "0.5")
+        .replace("¼", "0.25")
+        .replace("¾", "0.75");
 
       return {
-        amount: parseFloat(amount.replace(',', '.')),
-        unit: 'st',
-        name: simpleMatch[2].trim().toLowerCase()
+        amount: parseFloat(amount.replace(",", ".")),
+        unit: "st",
+        name: simpleMatch[2].trim().toLowerCase(),
       };
     }
 
@@ -71,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return {
       amount: null,
       unit: null,
-      name: ingredient.toLowerCase().trim()
+      name: ingredient.toLowerCase().trim(),
     };
   }
 
@@ -79,9 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
   function combineIngredients(allIngredients) {
     const combined = new Map();
 
-    allIngredients.forEach(ingredient => {
+    allIngredients.forEach((ingredient) => {
       const parsed = parseIngredient(ingredient);
-      const key = `${parsed.name}|${parsed.unit || ''}`;
+      const key = `${parsed.name}|${parsed.unit || ""}`;
 
       if (combined.has(key)) {
         const existing = combined.get(key);
@@ -97,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Convert back to display format
-    return Array.from(combined.values()).map(item => {
+    return Array.from(combined.values()).map((item) => {
       if (item.amount !== null) {
         // Round to reasonable precision
         const roundedAmount = Math.round(item.amount * 10) / 10;
@@ -114,20 +122,20 @@ document.addEventListener('DOMContentLoaded', function() {
     countSpan.textContent = count;
 
     if (count === 0) {
-      emptyMessage.style.display = 'block';
-      selectedRecipesDiv.innerHTML = '';
-      ingredientsListDiv.innerHTML = '';
+      emptyMessage.style.display = "block";
+      selectedRecipesDiv.innerHTML = "";
+      ingredientsListDiv.innerHTML = "";
       return;
     }
 
-    emptyMessage.style.display = 'none';
+    emptyMessage.style.display = "none";
 
     // Display selected recipes
     let recipesHTML = '<h3>Valda recept:</h3><ul class="recipe-list">';
     selectedRecipes.forEach((ingredients, title) => {
       recipesHTML += `<li>${title}</li>`;
     });
-    recipesHTML += '</ul>';
+    recipesHTML += "</ul>";
     selectedRecipesDiv.innerHTML = recipesHTML;
 
     // Combine all ingredients
@@ -145,19 +153,19 @@ document.addEventListener('DOMContentLoaded', function() {
     combinedIngredients.forEach((ingredient, index) => {
       ingredientsHTML += `<li><label><input type="checkbox" class="ingredient-check" data-ingredient="${ingredient}" checked> ${ingredient}</label></li>`;
     });
-    ingredientsHTML += '</ul>';
+    ingredientsHTML += "</ul>";
     ingredientsListDiv.innerHTML = ingredientsHTML;
 
     // Hide AI summary when list changes
-    aiSummaryDiv.style.display = 'none';
+    aiSummaryDiv.style.display = "none";
   }
 
   // Handle checkbox change
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function(e) {
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", function (e) {
       e.stopPropagation();
-      const card = this.closest('.recipe-card');
-      const title = card.getAttribute('data-recipe-title');
+      const card = this.closest(".recipe-card");
+      const title = card.getAttribute("data-recipe-title");
 
       if (this.checked) {
         const ingredients = getIngredients(card);
@@ -171,33 +179,39 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Toggle panel
-  toggleBtn.addEventListener('click', function() {
-    panel.classList.toggle('open');
+  toggleBtn.addEventListener("click", function () {
+    panel.classList.toggle("open");
   });
 
-  closeBtn.addEventListener('click', function() {
-    panel.classList.remove('open');
+  closeBtn.addEventListener("click", function () {
+    panel.classList.remove("open");
   });
 
   // Clear all
-  clearBtn.addEventListener('click', function() {
-    checkboxes.forEach(cb => cb.checked = false);
+  clearBtn.addEventListener("click", function () {
+    checkboxes.forEach((cb) => (cb.checked = false));
     selectedRecipes.clear();
     updateShoppingList();
   });
 
   // Get only checked ingredients
   function getCheckedIngredients() {
-    const checkedBoxes = document.querySelectorAll('.ingredient-check:checked');
-    return Array.from(checkedBoxes).map(cb => cb.getAttribute('data-ingredient'));
+    const checkedBoxes = document.querySelectorAll(".ingredient-check:checked");
+    return Array.from(checkedBoxes).map((cb) =>
+      cb.getAttribute("data-ingredient")
+    );
   }
 
   // Print shopping list
-  printBtn.addEventListener('click', function() {
-    const printWindow = window.open('', '_blank');
-    const recipesListHTML = Array.from(selectedRecipes.keys()).map(title => `<li>${title}</li>`).join('');
+  printBtn.addEventListener("click", function () {
+    const printWindow = window.open("", "_blank");
+    const recipesListHTML = Array.from(selectedRecipes.keys())
+      .map((title) => `<li>${title}</li>`)
+      .join("");
     const checkedIngredients = getCheckedIngredients();
-    const ingredientsHTML = checkedIngredients.map(ing => `<li>${ing}</li>`).join('');
+    const ingredientsHTML = checkedIngredients
+      .map((ing) => `<li>${ing}</li>`)
+      .join("");
 
     printWindow.document.write(`
       <!DOCTYPE html>
@@ -229,16 +243,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // AI Summarize shopping list
-  aiSummarizeBtn.addEventListener('click', async function() {
+  aiSummarizeBtn.addEventListener("click", async function () {
     const checkedIngredients = getCheckedIngredients();
 
     if (checkedIngredients.length === 0) {
-      alert('Lägg till recept och välj ingredienser först!');
+      alert("Lägg till recept och välj ingredienser först!");
       return;
     }
 
     // Show message about copying to Claude
-    const ingredientsList = checkedIngredients.map((ing, i) => `${i + 1}. ${ing}`).join('\n');
+    const ingredientsList = checkedIngredients
+      .map((ing, i) => `${i + 1}. ${ing}`)
+      .join("\n");
 
     const promptText = `Här är en inköpslista från flera recept. Kan du optimera den genom att:
 1. Kombinera liknande ingredienser (t.ex. "1 msk salt" + "1 tsk salt" = praktisk mängd)
@@ -246,6 +262,13 @@ document.addEventListener('DOMContentLoaded', function() {
 3. Gruppera ingredienser logiskt (mejeri, kött, grönsaker, torrvaror, kryddor)
 4. Ta bort dubbletter
 5. Skriv på svenska
+
+När du är klar:
+➡️ Lägg till en “ICA-baserad lista” som ett kodblock sist i svaret, där du listar alla ingredienser en per rad, utan mängdangivelser, bara som rena produktnamn — t.ex.
+mjölk  
+vetemjöl  
+nötfärs  
+gul lök
 
 Ingredienser:
 ${ingredientsList}`;
@@ -264,8 +287,7 @@ ${ingredientsList}`;
           </details>
         </div>
       `;
-      aiSummaryDiv.style.display = 'block';
-
+      aiSummaryDiv.style.display = "block";
     } catch (err) {
       // Fallback if clipboard doesn't work
       aiSummaryContent.innerHTML = `
@@ -275,14 +297,14 @@ ${ingredientsList}`;
           <p style="margin-top: 1rem;">Gå till <a href="https://claude.ai" target="_blank">claude.ai</a> för att optimera listan.</p>
         </div>
       `;
-      aiSummaryDiv.style.display = 'block';
+      aiSummaryDiv.style.display = "block";
     }
   });
 
   // Close panel when clicking outside
-  panel.addEventListener('click', function(e) {
+  panel.addEventListener("click", function (e) {
     if (e.target === panel) {
-      panel.classList.remove('open');
+      panel.classList.remove("open");
     }
   });
 });

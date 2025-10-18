@@ -1,9 +1,9 @@
 ---
-title: Spagetti och köttfärssås
-description: Klassisk spagetti med köttfärssås – enkel, smakrik och barnens favorit. Med lök, tomatpuré och en skvätt Worcestershiresås får den djup smak. Lägg till lite chiliflakes om du vill ha mer hetta, och toppa med parmesan för lyxigare känsla.
+title: Snabb köttfärssås
+description: Snabb spagetti med köttfärssås – enkel, smakrik och barnens favorit. Med lök, tomatpuré och en skvätt Worcestershiresås får den djup smak. Lägg till lite chiliflakes om du vill ha mer hetta, och toppa med parmesan för lyxigare känsla.
 servings: ca 5–6 portioner
 difficulty: Lätt
-tags: [vardag, pasta]
+tags: [middag, nötfärs, pasta, italienskt, vardagsmat]
 source: Eget recept
 rating: 4
 comment: Båda barnen tycker om
