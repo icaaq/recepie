@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<article class="recipe">
+  <div class="container">
+    <header class="recipe-header">
+      <h1 class="recipe-title">{{ page.title }}</h1>
+      <p class="recipe-description">{{ page.description }}</p>
+
+      <div class="recipe-meta">
+        {% if page.prep_time %}
+        <span class="meta-item">
+          <strong>Förberedelsetid:</strong> {{ page.prep_time }}
+        </span>
+        {% endif %}
+        {% if page.cook_time %}
+        <span class="meta-item">
+          <strong>Tillagningstid:</strong> {{ page.cook_time }}
+        </span>
+        {% endif %}
+        {% if page.servings %}
+        <span class="meta-item">
+          <strong>Portioner:</strong> {{ page.servings }}
+        </span>
+        {% endif %}
+        {% if page.difficulty %}
+        <span class="meta-item">
+          <strong>Svårighetsgrad:</strong> {{ page.difficulty }}
+        </span>
+        {% endif %}
+      </div>
+
+      {% if page.tags %}
+      <div class="recipe-tags">
+        {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="recipe-content">
+      {{ content }}
+    </div>
+
+    <div class="recipe-footer">
+      <a href="{{ '/' | relative_url }}" class="back-link">&larr; Tillbaka till alla recept</a>
+    </div>
+  </div>
+</article>

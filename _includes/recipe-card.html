@@ -1,0 +1,29 @@
+<article class="recipe-card" data-tags="{{ recipe.tags | join: ',' }}">
+  <a href="{{ recipe.url | relative_url }}" class="card-link">
+    <div class="card-content">
+      <h2 class="card-title">{{ recipe.title }}</h2>
+      <p class="card-description">{{ recipe.description }}</p>
+
+      <div class="card-meta">
+        {% if recipe.prep_time or recipe.cook_time %}
+        <span class="meta-time">
+          {% if recipe.prep_time %}{{ recipe.prep_time }}{% endif %}
+          {% if recipe.prep_time and recipe.cook_time %} + {% endif %}
+          {% if recipe.cook_time %}{{ recipe.cook_time }}{% endif %}
+        </span>
+        {% endif %}
+        {% if recipe.difficulty %}
+        <span class="meta-difficulty">{{ recipe.difficulty }}</span>
+        {% endif %}
+      </div>
+
+      {% if recipe.tags %}
+      <div class="card-tags">
+        {% for tag in recipe.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </a>
+</article>

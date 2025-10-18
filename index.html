@@ -1,0 +1,29 @@
+---
+layout: default
+title: Home
+script: /assets/js/filter.js
+---
+
+<div class="container">
+  <section class="filter-section">
+    <h2 class="filter-title">Filter</h2>
+    <div class="filter-controls">
+      <button class="filter-btn active" data-filter="all">Alla</button>
+      {% assign all_tags = site.recipes | map: 'tags' | join: ',' | split: ',' |
+      uniq | sort %} {% for tag in all_tags %}
+      <button class="filter-btn" data-filter="{{ tag }}">{{ tag }}</button>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="recipes-section">
+    <div class="recipes-grid" id="recipes-grid">
+      {% for recipe in site.recipes %} {% include recipe-card.html recipe=recipe
+      %} {% endfor %}
+    </div>
+
+    <div class="no-results" id="no-results" style="display: none">
+      <p>Inga recept hittades med den valda taggen.</p>
+    </div>
+  </section>
+</div>

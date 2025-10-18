@@ -1,0 +1,11 @@
+#!/bin/bash
+# Simple wrapper for importing ICA recipes
+# Usage: ./import-recipe <ica-recipe-url>
+
+if [ $# -eq 0 ]; then
+    echo "Usage: ./import-recipe <ica-recipe-url>"
+    echo "Example: ./import-recipe https://www.ica.se/recept/spaghetti-och-kottfarssas-712805/"
+    exit 1
+fi
+
+python3 ica-import.py "$1"
