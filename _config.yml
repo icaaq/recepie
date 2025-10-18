@@ -1,0 +1,32 @@
+# Site settings
+title: Holkens Recept
+description: En minimalistisk receptsamling med enkla och goda recept
+baseurl: "/recepie"
+url: "https://icaaq.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Collections
+collections:
+  recipes:
+    output: true
+    permalink: /recipes/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "recipes"
+    values:
+      layout: "recipe"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
