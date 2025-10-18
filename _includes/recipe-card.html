@@ -1,4 +1,8 @@
-<article class="recipe-card" data-tags="{{ recipe.tags | join: ',' }}">
+<article class="recipe-card" data-tags="{{ recipe.tags | join: ',' }}" data-recipe-title="{{ recipe.title }}" data-ingredients='{{ recipe.ingredients | jsonify }}'>
+  <div class="card-checkbox-wrapper">
+    <input type="checkbox" class="recipe-checkbox" id="recipe-{{ recipe.title | slugify }}" data-recipe="{{ recipe.title | slugify }}">
+    <label for="recipe-{{ recipe.title | slugify }}" class="checkbox-label">Lägg till i inköpslista</label>
+  </div>
   <a href="{{ recipe.url | relative_url }}" class="card-link">
     <div class="card-content">
       <h2 class="card-title">{{ recipe.title }}</h2>

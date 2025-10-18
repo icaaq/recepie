@@ -24,6 +24,85 @@ body {
   background-color: var(--color-bg);
 }
 
+/* Password Protection Overlay */
+.password-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f8f9fa;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.password-box h2 {
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-size: 1.5rem;
+}
+
+.password-box p {
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+}
+
+.password-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.password-box input[type="password"] {
+  padding: 0.75rem;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.password-box input[type="password"]:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.password-box button {
+  padding: 0.75rem;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.password-box button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.error-message {
+  display: none;
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
 /* Container */
 .container {
   max-width: var(--max-width);
@@ -184,6 +263,254 @@ body {
   gap: 0.5rem;
 }
 
+/* Shopping List Checkbox */
+.card-checkbox-wrapper {
+  padding: 0.75rem 1rem;
+  background-color: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recipe-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
+
+.checkbox-label {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Shopping List Toggle Button */
+.shopping-list-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.shopping-list-toggle:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Shopping List Panel */
+.shopping-list-panel {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 450px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-list-panel.open {
+  right: 0;
+}
+
+.shopping-list-header {
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.shopping-list-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.shopping-list-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 2rem;
+}
+
+.selected-recipes h3,
+.ingredients-list h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+.recipe-list,
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.recipe-list li {
+  padding: 0.5rem;
+  background-color: var(--color-bg-light);
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.ingredient-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ingredient-list label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.ingredient-check {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
+
+.shopping-list-footer {
+  padding: 1.5rem;
+  border-top: 2px solid var(--color-border);
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-ai {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-bg-light);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-border);
+}
+
+.btn-ai {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-ai:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5568d3 0%, #63408a 100%);
+  transform: translateY(-1px);
+}
+
+.btn-ai:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* AI Summary Section */
+.ai-summary {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  border: 2px solid #667eea;
+  border-radius: 8px;
+}
+
+.ai-summary h3 {
+  color: #667eea;
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+}
+
+.optimized-list {
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.loading {
+  text-align: center;
+  color: #667eea;
+  font-style: italic;
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fee;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .shopping-list-panel {
+    width: 100%;
+    right: -100%;
+  }
+
+  .shopping-list-toggle {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
 /* Recipe Page */
 .recipe {
   margin-bottom: 2rem;
@@ -236,6 +563,18 @@ body {
   border-radius: 4px;
   font-size: 0.85rem;
   color: var(--color-text);
+}
+
+.tag-link {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tag-link:hover {
+  background-color: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+  cursor: pointer;
 }
 
 /* Recipe Content */

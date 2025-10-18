@@ -8,6 +8,18 @@ difficulty: Lätt
 tags: [kyckling, middag, curry, snabbt]
 rating: 4
 comment: Väldigt god och snabb vardagsmat. Nästa gång lägger jag till lite mer curry för starkare smak.
+ingredients:
+  - 500 g kycklingfilé
+  - 1 gul lök
+  - 2 vitlöksklyftor
+  - 1 msk färsk ingefära, riven
+  - 2 msk curry
+  - 1 msk tomatpuré
+  - 400 ml kokosmjölk
+  - 2 dl kycklingbuljong
+  - 1 msk olja
+  - Salt och peppar
+  - Färsk koriander (valfritt)
 ---
 
 ## Ingredienser

@@ -31,7 +31,7 @@ layout: default
       {% if page.tags %}
       <div class="recipe-tags">
         {% for tag in page.tags %}
-        <span class="tag">{{ tag }}</span>
+        <a href="{{ '/' | relative_url }}?tag={{ tag }}" class="tag tag-link">{{ tag }}</a>
         {% endfor %}
       </div>
       {% endif %}

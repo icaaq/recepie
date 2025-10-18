@@ -3,10 +3,21 @@ title: Köttfärsgratäng
 description: En krämig och smakrik köttfärsgratäng med potatis, färskost, tomatpuré och oregano. Perfekt vardagsmat som hela familjen gillar.
 servings: ca 4 portioner
 difficulty: Medium
-tags: [vardagsmat, gratäng, köttfärs]
+tags: [vardagsmat, gratäng, nötfärs]
 source: handskrivet recept
 rating: 3
 comment: Båda barnen tycker om.
+ingredients:
+  - 500 g nötfärs
+  - 1 gul lök
+  - 2 vitlöksklyftor
+  - 3 msk tomatpuré
+  - 1 msk torkad oregano
+  - 100 g färskost
+  - salt och peppar
+  - 150 g riven ost
+  - 2 dl grädde
+  - 800 g fast potatis
 ---
 
 ## Ingredienser

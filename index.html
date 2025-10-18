@@ -1,8 +1,34 @@
 ---
 layout: default
 title: Home
-script: /assets/js/filter.js
 ---
+
+<!-- Shopping List Button -->
+<button id="shopping-list-toggle" class="shopping-list-toggle">
+  🛒 Inköpslista (<span id="shopping-count">0</span>)
+</button>
+
+<!-- Shopping List Panel -->
+<div id="shopping-list-panel" class="shopping-list-panel">
+  <div class="shopping-list-header">
+    <h2>Inköpslista</h2>
+    <button id="close-shopping-list" class="close-btn">&times;</button>
+  </div>
+  <div class="shopping-list-content">
+    <p class="empty-message" id="empty-message">Välj recept för att lägga till ingredienser</p>
+    <div id="selected-recipes" class="selected-recipes"></div>
+    <div id="ingredients-list" class="ingredients-list"></div>
+    <div id="ai-summary" class="ai-summary" style="display: none;">
+      <h3>AI-Sammanfattning</h3>
+      <div id="ai-summary-content"></div>
+    </div>
+  </div>
+  <div class="shopping-list-footer">
+    <button id="clear-shopping-list" class="btn-secondary">Rensa allt</button>
+    <button id="ai-summarize" class="btn-ai" title="Använd Claude AI för att sammanfatta och optimera listan">🤖 Optimera</button>
+    <button id="print-shopping-list" class="btn-primary">Skriv ut</button>
+  </div>
+</div>
 
 <div class="container">
   <section class="filter-section">
@@ -27,3 +53,6 @@ script: /assets/js/filter.js
     </div>
   </section>
 </div>
+
+<script src="{{ '/assets/js/filter.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/shopping-list.js' | relative_url }}"></script>
