@@ -6,6 +6,8 @@ cook_time: 25 min
 servings: 4
 difficulty: Lätt
 tags: [kyckling, middag, curry, snabbt]
+rating: 4
+comment: Väldigt god och snabb vardagsmat. Nästa gång lägger jag till lite mer curry för starkare smak.
 ---
 
 ## Ingredienser

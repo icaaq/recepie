@@ -6,6 +6,8 @@ cook_time: 20 min
 servings: 4
 difficulty: Lätt
 tags: [vegetarisk, frukost, lunch, klassiker]
+rating: 5
+comment: Ett perfekt grundrecept som alltid lyckas! Barnen älskar dem och de blir jämna och gyllenbruna varje gång.
 ---
 
 ## Ingredienser

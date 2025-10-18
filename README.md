@@ -73,6 +73,8 @@ cook_time: 30 min
 servings: 4
 difficulty: Lätt
 tags: [vegetarisk, middag, snabbt]
+rating: 5              # Valfritt: 1-5 stjärnor
+comment: Din kommentar om receptet  # Valfritt
 ---
 
 ## Ingredienser
@@ -84,6 +86,19 @@ tags: [vegetarisk, middag, snabbt]
 
 1. Steg 1
 2. Steg 2
+```
+
+#### Betyg och kommentarer
+
+Du kan lägga till ditt betyg och en kommentar till varje recept:
+
+- **rating**: Ett betyg från 1-5 stjärnor
+- **comment**: En personlig kommentar om receptet (tips, ändringar, etc.)
+
+Exempel:
+```yaml
+rating: 4
+comment: Mycket god! Nästa gång lägger jag till mer vitlök.
 ```
 
 ### Tillgängliga taggar

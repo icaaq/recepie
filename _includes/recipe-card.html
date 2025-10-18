@@ -2,6 +2,21 @@
   <a href="{{ recipe.url | relative_url }}" class="card-link">
     <div class="card-content">
       <h2 class="card-title">{{ recipe.title }}</h2>
+
+      {% if recipe.rating %}
+      <div class="card-rating">
+        <div class="card-stars">
+          {% for i in (1..5) %}
+            {% if i <= recipe.rating %}
+              <span class="star filled">★</span>
+            {% else %}
+              <span class="star">☆</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
       <p class="card-description">{{ recipe.description }}</p>
 
       <div class="card-meta">

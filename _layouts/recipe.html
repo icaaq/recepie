@@ -44,6 +44,33 @@ layout: default
       {{ content }}
     </div>
 
+    {% if page.rating or page.comment %}
+    <div class="recipe-review">
+      <h2>Min recension</h2>
+
+      {% if page.rating %}
+      <div class="rating">
+        <span class="rating-label">Betyg:</span>
+        <div class="stars" aria-label="Betyg {{ page.rating }} av 5 stjärnor">
+          {% for i in (1..5) %}
+            {% if i <= page.rating %}
+              <span class="star filled">★</span>
+            {% else %}
+              <span class="star">☆</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page.comment %}
+      <div class="comment">
+        <p class="comment-text">{{ page.comment }}</p>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+
     <div class="recipe-footer">
       <a href="{{ '/' | relative_url }}" class="back-link">&larr; Tillbaka till alla recept</a>
     </div>
