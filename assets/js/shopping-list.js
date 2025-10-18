@@ -140,10 +140,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const combinedIngredients = combineIngredients(allIngredients);
     currentCombinedIngredients = combinedIngredients;
 
-    // Display ingredients
+    // Display ingredients with checkboxes (all checked by default)
     let ingredientsHTML = '<h3>Ingredienser:</h3><ul class="ingredient-list">';
-    combinedIngredients.forEach(ingredient => {
-      ingredientsHTML += `<li><label><input type="checkbox" class="ingredient-check"> ${ingredient}</label></li>`;
+    combinedIngredients.forEach((ingredient, index) => {
+      ingredientsHTML += `<li><label><input type="checkbox" class="ingredient-check" data-ingredient="${ingredient}" checked> ${ingredient}</label></li>`;
     });
     ingredientsHTML += '</ul>';
     ingredientsListDiv.innerHTML = ingredientsHTML;
@@ -186,11 +186,18 @@ document.addEventListener('DOMContentLoaded', function() {
     updateShoppingList();
   });
 
+  // Get only checked ingredients
+  function getCheckedIngredients() {
+    const checkedBoxes = document.querySelectorAll('.ingredient-check:checked');
+    return Array.from(checkedBoxes).map(cb => cb.getAttribute('data-ingredient'));
+  }
+
   // Print shopping list
   printBtn.addEventListener('click', function() {
     const printWindow = window.open('', '_blank');
     const recipesListHTML = Array.from(selectedRecipes.keys()).map(title => `<li>${title}</li>`).join('');
-    const ingredientsHTML = currentCombinedIngredients.map(ing => `<li>${ing}</li>`).join('');
+    const checkedIngredients = getCheckedIngredients();
+    const ingredientsHTML = checkedIngredients.map(ing => `<li>${ing}</li>`).join('');
 
     printWindow.document.write(`
       <!DOCTYPE html>
@@ -223,13 +230,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // AI Summarize shopping list
   aiSummarizeBtn.addEventListener('click', async function() {
-    if (currentCombinedIngredients.length === 0) {
-      alert('Lägg till recept först!');
+    const checkedIngredients = getCheckedIngredients();
+
+    if (checkedIngredients.length === 0) {
+      alert('Lägg till recept och välj ingredienser först!');
       return;
     }
 
     // Show message about copying to Claude
-    const ingredientsList = currentCombinedIngredients.map((ing, i) => `${i + 1}. ${ing}`).join('\n');
+    const ingredientsList = checkedIngredients.map((ing, i) => `${i + 1}. ${ing}`).join('\n');
 
     const promptText = `Här är en inköpslista från flera recept. Kan du optimera den genom att:
 1. Kombinera liknande ingredienser (t.ex. "1 msk salt" + "1 tsk salt" = praktisk mängd)
