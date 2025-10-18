@@ -190,11 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
   printBtn.addEventListener('click', function() {
     const printWindow = window.open('', '_blank');
     const recipesListHTML = Array.from(selectedRecipes.keys()).map(title => `<li>${title}</li>`).join('');
-    const allIngredients = [];
-    selectedRecipes.forEach((ingredients) => {
-      allIngredients.push(...ingredients);
-    });
-    const ingredientsHTML = allIngredients.map(ing => `<li>${ing}</li>`).join('');
+    const ingredientsHTML = currentCombinedIngredients.map(ing => `<li>${ing}</li>`).join('');
 
     printWindow.document.write(`
       <!DOCTYPE html>
