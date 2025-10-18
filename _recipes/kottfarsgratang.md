@@ -5,6 +5,8 @@ servings: ca 4 portioner
 difficulty: Medium
 tags: [vardagsmat, gratäng, köttfärs]
 source: handskrivet recept
+rating: 3
+comment: Båda barnen tycker om.
 ---
 
 ## Ingredienser

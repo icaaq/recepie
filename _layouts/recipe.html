@@ -13,18 +13,15 @@ layout: default
         <span class="meta-item">
           <strong>Förberedelsetid:</strong> {{ page.prep_time }}
         </span>
-        {% endif %}
-        {% if page.cook_time %}
+        {% endif %} {% if page.cook_time %}
         <span class="meta-item">
           <strong>Tillagningstid:</strong> {{ page.cook_time }}
         </span>
-        {% endif %}
-        {% if page.servings %}
+        {% endif %} {% if page.servings %}
         <span class="meta-item">
           <strong>Portioner:</strong> {{ page.servings }}
         </span>
-        {% endif %}
-        {% if page.difficulty %}
+        {% endif %} {% if page.difficulty %}
         <span class="meta-item">
           <strong>Svårighetsgrad:</strong> {{ page.difficulty }}
         </span>
@@ -40,30 +37,24 @@ layout: default
       {% endif %}
     </header>
 
-    <div class="recipe-content">
-      {{ content }}
-    </div>
+    <div class="recipe-content">{{ content }}</div>
 
     {% if page.rating or page.comment %}
     <div class="recipe-review">
-      <h2>Min recension</h2>
+      <h2>Vår recension</h2>
 
       {% if page.rating %}
       <div class="rating">
         <span class="rating-label">Betyg:</span>
         <div class="stars" aria-label="Betyg {{ page.rating }} av 5 stjärnor">
-          {% for i in (1..5) %}
-            {% if i <= page.rating %}
-              <span class="star filled">★</span>
-            {% else %}
-              <span class="star">☆</span>
-            {% endif %}
-          {% endfor %}
+          {% for i in (1..5) %} {% if i <= page.rating %}
+          <span class="star filled">★</span>
+          {% else %}
+          <span class="star">☆</span>
+          {% endif %} {% endfor %}
         </div>
       </div>
-      {% endif %}
-
-      {% if page.comment %}
+      {% endif %} {% if page.comment %}
       <div class="comment">
         <p class="comment-text">{{ page.comment }}</p>
       </div>
@@ -72,7 +63,9 @@ layout: default
     {% endif %}
 
     <div class="recipe-footer">
-      <a href="{{ '/' | relative_url }}" class="back-link">&larr; Tillbaka till alla recept</a>
+      <a href="{{ '/' | relative_url }}" class="back-link"
+        >&larr; Tillbaka till alla recept</a
+      >
     </div>
   </div>
 </article>
