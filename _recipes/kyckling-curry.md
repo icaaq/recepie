@@ -22,20 +22,6 @@ ingredients:
   - Färsk koriander (valfritt)
 ---
 
-## Ingredienser
-
-- 500 g kycklingfilé
-- 1 gul lök
-- 2 vitlöksklyftor
-- 1 msk färsk ingefära, riven
-- 2 msk curry
-- 1 msk tomatpuré
-- 400 ml kokosmjölk
-- 2 dl kycklingbuljong
-- 1 msk olja
-- Salt och peppar
-- Färsk koriander (valfritt)
-
 ## Instruktioner
 
 1. Skär kycklingen i bitar. Hacka lök, vitlök och ingefära.

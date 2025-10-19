@@ -19,18 +19,6 @@ ingredients:
   - 1 vitlöksklyfta
 ---
 
-## Ingredienser
-
-- 400 g pasta (torr, ca 180 g kokt per portion)  
-- 800 g kycklingfärs  
-- 130 g pestopaprika (1 burk)  
-- 150 g grädde (40%)  
-- 15 g stekfett  
-- salt  
-- svartpeppar  
-- timjan  
-- 1 vitlöksklyfta  
-
 ## Instruktioner
 
 1. **Koka pastan** enligt anvisningarna på förpackningen.  

@@ -17,15 +17,6 @@ ingredients:
   - Smör till stekning
 ---
 
-## Ingredienser
-
-- 3 ägg
-- 6 dl mjölk
-- 3 dl vetemjöl
-- 1/2 tsk salt
-- 2 msk smält smör eller matolja
-- Smör till stekning
-
 ## Instruktioner
 
 1. Vispa ägg och hälften av mjölken i en bunke.

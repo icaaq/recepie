@@ -20,21 +20,6 @@ ingredients:
   - 800 g fast potatis
 ---
 
-## Ingredienser
-
-- 500 g köttfärs
-- 1 gul lök
-- 2 vitlöksklyftor
-- 3 msk tomatpuré
-- 1 msk torkad oregano
-- 100 g färskost
-- salt och peppar
-- 150 g riven ost
-- 2 dl grädde
-- 800 g fast potatis
-
----
-
 ## Instruktioner
 
 1. Sätt ugnen på 200 °C.  

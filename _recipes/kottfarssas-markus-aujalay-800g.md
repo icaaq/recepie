@@ -27,26 +27,6 @@ ingredients:
   - salt och svartpeppar
 ---
 
-## Ingredienser
-
-- 800 g nötfärs  
-- 1 dl olivolja  
-- 2 st gula lökar  
-- 1 st röd chili  
-- 4 st vitlöksklyftor  
-- 1 normalstor morot  
-- 1–2 stjälkar blekselleri  
-- 5 msk tomatpuré  
-- 2 ½ dl vitt vin  
-- 2 burkar hela tomater (à ca 400 g)  
-- 2 dl vatten  
-- 2 st köttbuljongtärningar  
-- 2 st lagerblad  
-- 1 tsk torkad timjan  
-- 1 tsk torkad oregano  
-- 1–2 tsk kinesisk svampsoja (efter smak)  
-- salt och svartpeppar  
-
 ## Instruktioner
 
 1. Finhacka lök, vitlök, chili, morot och selleri.  

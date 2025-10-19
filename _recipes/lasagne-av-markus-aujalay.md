@@ -22,27 +22,6 @@ ingredients:
   - 1 citron
 ---
 
-## Ingredienser
-
-### Lasagne
-- 1 l köttfärssås  
-- 12–15 lasagneplattor  
-
-### Ostsås
-- 50 g smör  
-- 4 msk vetemjöl  
-- 8 dl mjölk  
-- 2 dl riven mozzarellaost  
-- 2 dl riven parmesanost  
-- salt och svartpeppar  
-
-### Sallad
-- 1 st fänkål  
-- 1 påse (65 g) ruccola  
-- olivolja  
-- 1 citron  
-- salt och svartpeppar  
-
 ## Instruktioner
 
 1. **Förbered ugnen** – sätt ugnen på 200 °C.  

@@ -21,20 +21,6 @@ ingredients:
   - ev. Chicken & Steak-krydda
 ---
 
-## Ingredienser
-
-- 1.5 kg kycklinginnerfilé  
-- 4 dl crème fraiche  
-- 125 g mjukost Cantadou 4 peppar  
-- 2.5 dl grädde  
-- 1 tsk pepparmix  
-- 1 röd paprika  
-- 1 hönsbuljongtärning  
-- 1 grönsaksbuljongtärning  
-- riven ost  
-- bandspaghetti  
-- ev. Chicken & Steak-krydda  
-
 ## Instruktioner
 
 1. **Krydda och stek** kycklingfiléerna i stekpanna tills de får färg.  

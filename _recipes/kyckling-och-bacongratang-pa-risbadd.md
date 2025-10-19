@@ -25,24 +25,6 @@ ingredients:
   - hackad persilja till garnering
 ---
 
-## Ingredienser
-
-- 4 port kokt ris  
-- 4 kycklingbröstfiléer  
-- salt och svartpeppar  
-- 2 msk smör  
-- 3 dl vispgrädde  
-- 3 msk chilisås  
-- ½ färsk röd chilifrukt  
-- 2 msk kalvfond  
-- 3 msk finhackad persilja, färsk basilika eller färsk timjan  
-- maizena ljus redning  
-- 1 dl riven lagrad ost (31 %)  
-- 8 röda körsbärstomater  
-- 8 gula körsbärstomater  
-- 140 g tärnad bacon  
-- hackad persilja till garnering  
-
 ## Instruktioner
 
 1. Sätt ugnen på 225 °C. Fördela det kokta riset i en smord eldfast form.  

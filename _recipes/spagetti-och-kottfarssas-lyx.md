@@ -24,25 +24,6 @@ ingredients:
   - Spagetti
 ---
 
-## Ingredienser
-
-- 800 g nötfärs
-- 1 gul lök
-- 2 msk tomatpuré
-- Oregano
-- Salt och peppar
-- (Ev. en nypa chiliflakes för mer hetta)
-- 1 förpackning (à 400–500 g) krossade tomater
-- 1 förpackning (à 400–500 g) passerade tomater
-- Ca 1 burk vatten (skölj ur för att få med all tomat)
-- 1 ½ buljongtärning
-- 1 msk Worcestershiresås
-- 2–3 dl crème fraîche **eller** 1 ½ dl grädde
-- (Ev. riven parmesan vid servering)
-
-Servera med:
-- Spagetti
-
 ## Instruktioner
 
 1. Finhacka löken och fräs den mjuk i en stor gryta, lägg åt sidan.

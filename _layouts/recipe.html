@@ -25,6 +25,15 @@ layout: default
         <span class="meta-item">
           <strong>Svårighetsgrad:</strong> {{ page.difficulty }}
         </span>
+        {% endif %} {% if page.source or page.source_url %}
+        <span class="meta-item">
+          <strong>Källa:</strong>
+          {% if page.source_url %}
+          <a href="{{ page.source_url }}" target="_blank" rel="noopener noreferrer">{{ page.source }}</a>
+          {% else %}
+          {{ page.source }}
+          {% endif %}
+        </span>
         {% endif %}
       </div>
 
@@ -37,7 +46,22 @@ layout: default
       {% endif %}
     </header>
 
-    <div class="recipe-content recipe-content-grid">{{ content }}</div>
+    <div class="recipe-content recipe-content-grid">
+      {% if page.ingredients %}
+      <section class="recipe-section">
+        <h2>Ingredienser</h2>
+        <ul class="ingredients-list">
+          {% for ingredient in page.ingredients %}
+          <li>{{ ingredient }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      <div class="recipe-instructions">
+        {{ content }}
+      </div>
+    </div>
 
     {% if page.rating or page.comment %}
     <div class="recipe-review">

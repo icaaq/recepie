@@ -1,0 +1,101 @@
+# Recipe Import Instructions
+
+You will receive either:
+1. **An image** of a recipe
+2. **A URL link** to a recipe webpage
+
+Your task: Extract the recipe and create a markdown file following the template below.
+
+## Output Requirements
+
+1. **Create a separate .md file** for EACH recipe
+2. **Filename format**: Use kebab-case (lowercase with dashes), e.g., `kladdig-kladdkaka.md`
+3. **Character conversion**: Replace Swedish characters:
+   - å → a
+   - ä → a
+   - ö → o
+4. **Make the file downloadable** so I can save it directly
+
+## Template Structure
+
+Follow this exact format:
+
+---
+title: [Recipe name in Swedish]
+description: [1-2 sentence description of the dish]
+servings: [e.g., "4 portioner" or "ca 8 bitar"]
+difficulty: [Lätt, Medium, or Svår]
+tags: [tag1, tag2, tag3]
+source: [Website name, author, or "Eget recept"]
+rating: [Leave blank or use 1-5 if provided]
+comment: [Leave blank or add personal note if provided]
+ingredients:
+  - [quantity + unit + ingredient name]
+  - [quantity + unit + ingredient name]
+  - [etc.]
+---
+
+## Instruktioner
+
+[Step-by-step instructions, numbered]
+
+[Optional sections like ## Tips, ## Servering if they exist in the original]
+
+## Guidelines
+
+- **Ingredients array**: Convert fractions to decimals (1/2 → 0.5, 1 1/2 → 1.5)
+- **Tags**: Choose relevant tags like: kyckling, pasta, vegetarisk, middag, fika, efterrätt, snabbt, gratäng, etc.
+- **Difficulty**:
+  - Lätt = under 30 min, few steps
+  - Medium = 30-60 min, moderate complexity
+  - Svår = 60+ min, advanced techniques
+- **Preserve original language**: Keep all text in Swedish
+- **Format numbers**: Use Swedish format (dl, msk, tsk, g, kg, st)
+
+## Example Output
+
+Filename: `kladdig-kladdkaka.md`
+
+---
+title: Kladdig kladdkaka
+description: Kladdig kladdkaka är ju det godaste som finns. Med detta recept på kladdkaka får kakan perfekt krispig yta samtidigt som den är kladdig i mitten.
+servings: ca 8 bitar
+difficulty: Medium
+tags: [efterrätt, fika, bakning, choklad]
+source: ICA
+rating: 4
+comment: båda barnen älskar denna kladdkaka!
+ingredients:
+  - smör till formen
+  - ströbröd till formen
+  - 100 g smör
+  - 2 ägg
+  - 2.5 dl strösocker
+  - 3 msk kakao
+  - 2 tsk vaniljsocker
+  - 1.5 dl vetemjöl
+  - 1 krm salt
+  - florsocker till garnering
+  - 2 dl vispgrädde
+  - färska bär
+---
+
+## Instruktioner
+
+1. Sätt ugnen på 200°C, under- och övervärme.
+
+2. Smörj och bröa en form med löstagbar kant, ca 24 cm i diameter (för 8 bitar) eller spänn fast ett bakplåtspapper på botten.
+
+3. Smält smöret i kastrull, låt svalna något.
+
+4. Vispa ihop ägg och socker (använd inte en elvisp).
+
+5. Blanda kakao, vaniljsocker, vetemjöl och salt i en bunke och rör ner i äggblandningen.
+
+6. Tillsätt det smälta smöret och blanda försiktigt ihop till en jämn smet och häll sedan över smeten i formen.
+
+7. Grädda mitt i ugnen i ca 10-15 minuter (öka eller minska tiden vid behov beroende på hur kladdig du vill ha den).
+
+8. Ta ut kladdkakan och låt svalna.
+
+9. Sikta florsocker över om så önskas. Servera med vispad grädde och färska bär.

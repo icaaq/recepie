@@ -23,23 +23,6 @@ ingredients:
   - Krossade tomater (ca ½ förpackning)
 ---
 
-## Ingredienser
-
-- 400 g köttfärs  
-- 1 hackad rödlök  
-- 1 hackad paprika  
-- 1 vitlöksklyfta  
-- Några droppar tabasco  
-- 1 tsk mynta  
-- 1 tsk paprikapulver  
-- 1 tsk salt  
-- 1 tsk mald spiskummin  
-- 0,5 dl hackad färsk koriander  
-- 2 dl svarta bönor  
-- Vetetortillas (stora)  
-- 2 dl riven ost  
-- Krossade tomater (ca ½ förpackning)  
-
 ## Instruktioner
 
 1. Sätt ugnen på 250 °C.  

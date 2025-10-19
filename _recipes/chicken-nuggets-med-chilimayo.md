@@ -21,23 +21,6 @@ ingredients:
   - färskpressad citron
 ---
 
-## Ingredienser
-
-### Chicken nuggets
-- 700 g kycklinginnerfilé  
-- 5 ägg  
-- piffi allkrydda  
-- cornflakes  
-- potatismjöl  
-- frityrolja (t.ex. rapsolja eller solrosolja)  
-
-### Chilimayo
-- 1,5 dl majonnäs  
-- 1,5 dl crème fraîche  
-- 1 vitlöksklyfta (pressad)  
-- 1–2 tsk srirachasås (justera efter önskad hetta)  
-- en skvätt färskpressad citron  
-
 ## Instruktioner
 
 ### Chicken nuggets

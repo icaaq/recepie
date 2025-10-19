@@ -22,24 +22,6 @@ ingredients:
   - gröna ärtor
 ---
 
-## Ingredienser
-
-**Kycklingbiffar:**
-- 800 g kycklingfärs  
-- salt  
-- vitpeppar  
-- 3 st äggulor  
-- 1.6 dl vispgrädde  
-- smör till stekning  
-
-**Tillbehör:**
-- 12 st potatisar  
-- 45 g smör  
-- 2 dl mjölk  
-- salt och vitpeppar  
-- lingonsylt  
-- gröna ärtor  
-
 ## Instruktioner
 
 1. **Blanda färsen** med salt, vitpeppar och äggulor.  
