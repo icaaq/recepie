@@ -11,7 +11,7 @@ comment: Ett perfekt grundrecept som alltid lyckas! Barnen älskar dem och de bl
 ingredients:
   - 3 ägg
   - 6 dl mjölk
-  - 3 dl vetemjöl
+  - 3 dl vetemjöl (180g)
   - 1/2 tsk salt
   - 2 msk smält smör eller matolja
   - Smör till stekning
